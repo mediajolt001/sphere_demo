@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bogsqbdg54lt7"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://cgwpakrfvwjr1" path="res://bounce.tres" id="1_8pulh"]
+[ext_resource type="Script" uid="uid://c238rbbo4etu3" path="res://sphere.gd" id="2_veubm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5qy7q"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8pulh"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+mass = 0.001
+physics_material_override = ExtResource("1_8pulh")
+script = ExtResource("2_veubm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5qy7q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_8pulh")
+skeleton = NodePath("../..")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

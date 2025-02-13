@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://0a7pvvain3qq"]
+
+[ext_resource type="PlaneMesh" uid="uid://cnl6jh5yx2i32" path="res://plane.tres" id="1_dpar4"]
+[ext_resource type="Shape3D" uid="uid://chx1lkm1qpeoa" path="res://plane_collision_shape.tres" id="2_nqs3l"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_dpar4")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("2_nqs3l")
